@@ -13,11 +13,11 @@ board = [
 ]
 
 def print_board(board):
-    for i in range(len(board)):
+    for i in range(0, 9):
         if i % 3 == 0 and i != 0:
             print("- - - - - - - - - - - - ")
 
-        for j in range(len(board[0])):
+        for j in range(0, 9):
             if j % 3 == 0 and j != 0:
                 print(" | ", end="")
 
@@ -27,20 +27,20 @@ def print_board(board):
                 print(str(board[i][j]) + " ", end="")
 
 def find_empty(board):
-    for row in range(len(board)):
-        for column in range(len(board[0])):
+    for row in range(0, 9):
+        for column in range(0, 9):
             if (board[row][column] == 0):
                 return (row, column)
     return None
 
 def validate_row(board, row, number):
-    for i in range(len(board[0])):
+    for i in range(0, 9):
         if board[row][i] == number:
             return False
     return True
 
 def validate_column(board, column, number):
-    for i in range(len(board)):
+    for i in range(0, 9):
         if board[i][column] == number:
             return False
     return True
